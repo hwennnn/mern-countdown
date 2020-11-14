@@ -11,9 +11,9 @@ router.route('/').get((req, res) => {
 router.route('/add').post((req, res) => {
     const title = req.body.title;
     const due = req.body.due;
-    const added_time = moment().tz("Asia/Singapore").format('h:mm a');
+    const added_timestamp = moment().tz("Asia/Singapore");
 
-    const newItem = new Item({ title, due, added_time });
+    const newItem = new Item({ title, due, added_timestamp });
 
     newItem.save()
         .then(() => res.json('Item added!'))
