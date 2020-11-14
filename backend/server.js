@@ -19,7 +19,7 @@ connection.once('open', () => {
     console.log("MongoDB database connection established successfully");
 })
 
-// Database Controllers
+// Database API
 app.use('/items', itemsRouter);
 
 app.listen(port, () => {
